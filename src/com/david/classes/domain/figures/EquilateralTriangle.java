@@ -34,6 +34,11 @@ public class EquilateralTriangle extends Triangle {
 
     @Override
     public double calculateArea() {
+        // TODO: Given that all the triangles calculate areas in the same way,
+        //  this implementation could be written in the Triangle class.
+        //  Also, if by mistake, we call calculateArea, before calling calculateHeight,
+        //  the result of this calculation could be wrong. A better implementation would be:
+        //  return (side * calculateHeight()) / 2
         return (side * height)/2;
     }
 

@@ -66,6 +66,8 @@ public class InputHandler {
         JFrame f =new JFrame();
         f.requestFocusInWindow();
         int selectedOption = JOptionPane.showConfirmDialog(f, Message.CONFIRMATION_MESSAGE);
+        // TODO: Instead of calling System::exit, you could throw a custom exception
+        //  to instruct the ApplicationService that is time to finish the main loop.
         if(selectedOption == 0) System.exit(0);
         if(process == null) process = ProcessesEnum.TYPE_OPTION_MENU;
         throw new InterruptedProcessException(process);

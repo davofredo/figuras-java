@@ -17,6 +17,8 @@ public class FileHandler {
             completePath.append(directory).append(File.separator);
         }
         File directory = new File(completePath.toString());
+        // TODO: Do not assume that the directory was created. Use the returned value for feedback
+        //  and handle the scenario when the directory could not be created.
         directory.mkdir();
     }
 

@@ -56,6 +56,7 @@ public class WriteFileService implements Runnable {
                             JOptionPane.showMessageDialog(f, String.format(Message.ERROR, fileName));
                     }
                 }
+                // TODO: What if file doesn't exist?
             }catch (IOException e){
                 System.err.println(e.getClass());
             }

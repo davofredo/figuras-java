@@ -31,7 +31,13 @@ public class PropertyHandler {
             in = new FileInputStream(configPropsFile);
         } catch (FileNotFoundException e) {
             if(!new File(configPropsFile).createNewFile()) {
+                // TODO: This implementation would be better if we throw a custom exception
+                //  instead of printing a message and closing the app.
                 System.err.printf("Failed to create file %s", configPropsFile);
+                // TODO: This implementation was used to demonstrate the method System::exit,
+                //  but this approach is not advisable for real applications.
+                //  The best approach would be to throw a custom exception
+                //  and let another method in the call stack to handle it.
                 System.exit(1);
             }
             in = new FileInputStream(configPropsFile);
